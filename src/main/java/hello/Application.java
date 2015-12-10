@@ -8,7 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication //Average Spring boot setup
 public class Application extends SpringBootServletInitializer {
 
     @Override
