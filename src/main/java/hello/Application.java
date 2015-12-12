@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-
 public class Application extends SpringBootServletInitializer {
 
     @Override
