@@ -1,4 +1,4 @@
-package models;
+package hello.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.Id;
  * Created by informatica on 12/12/15.
  */
 @Entity
-public class person {
+public class Person {
 
     @Id
     @GeneratedValue
@@ -42,12 +42,21 @@ public class person {
         this.lastName = lastName;
     }
 
-    public person(Long id, String name, String lastName) {
+    public Person(Long id, String name, String lastName) {
         Id = id;
         this.name = name;
         this.lastName = lastName;
     }
 
-    public person() {
+    public Person() {
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }
