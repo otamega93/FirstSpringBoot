@@ -5,6 +5,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
@@ -27,18 +28,22 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
     //Prevents all  HTTP DELETE types
     //@RestResource(exported = false)
     @Override
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     void delete(Long id);
 
     //@RestResource(exported = false)
     @Override
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     void delete(Iterable<? extends Person> iterable);
 
     //@RestResource(exported = false)
     @Override
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     void delete(Person person);
 
     //@RestResource(exported = false)
     @Override
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     void deleteAll();
 
     //Prevents either HTTP POSTS and PUTS
