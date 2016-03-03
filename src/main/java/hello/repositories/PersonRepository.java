@@ -15,6 +15,8 @@ import java.util.List;
 @RepositoryRestResource
 public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
 
+    //Example route
+    //http://127.0.0.2:9900/persons/search/byName?name=
     @RestResource(path="byName", rel = "byName")
     List<Person> findByName(@Param("name") String name);
 

@@ -29,7 +29,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthSuccess authenticationSuccessHandler;
 
-    @Override
+    @Autowired
     protected void configure(AuthenticationManagerBuilder builder) throws Exception {
         builder.inMemoryAuthentication().withUser("user").password("user").roles("USER").and().withUser("admin")
                 .password("admin").roles("ADMIN");
@@ -42,7 +42,8 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().anyRequest().permitAll()
                 //.authorizeRequests().antMatchers("/persons/**").authenticated()
                 .and()
-                .formLogin().permitAll().successHandler(authenticationSuccessHandler).failureHandler(authenticationFailureHandler)
+                .formLogin().permitAll().successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
                 .and()
                 .rememberMe().rememberMeParameter("remember-me").tokenValiditySeconds(30)
                 .and()
