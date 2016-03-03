@@ -14,13 +14,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @SpringBootApplication
 @EnableJpaRepositories
-@Import(RepositoryRestMvcConfiguration.class)
+//@Import(RepositoryRestMvcConfiguration.class)
 public class Application extends SpringBootServletInitializer {
-
-    //@Bean
-    //public WebSecurityConfigurerAdapter webSecurityConfigurerAdapter() {
-    //    return new ApplicationSecurity();
-    //}
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
