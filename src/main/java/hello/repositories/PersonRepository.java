@@ -23,6 +23,7 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
     @RestResource(path="byLastName", rel = "byLastName")
     List<Person> findByLastName(@Param("lastName") String lastName);
 
+    //http://127.0.0.2:9900/persons/search/byNameAndLastName?name=gabriel&lastName=ruiz
     @RestResource(path="byNameAndLastName", rel = "byNameAndLastName")
     List<Person> findByNameAndLastName(@Param("name") String name,
                                               @Param("lastName") String lastName);
