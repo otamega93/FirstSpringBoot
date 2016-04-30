@@ -31,7 +31,7 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
     //Prevents all  HTTP DELETE types
     //@RestResource(exported = false)
     @Override
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     void delete(Long id);
 
     //@RestResource(exported = false)
@@ -52,6 +52,7 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
     //Prevents either HTTP POSTS and PUTS
     //@RestResource(exported = false)
     @Override
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     Person save(Person person);
 
 }
